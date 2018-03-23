@@ -8,8 +8,11 @@ $headers = @{
 $apiURL = "https://ci.appveyor.com/api/projects/$env:APPVEYOR_ACCOUNT_NAME/$env:APPVEYOR_PROJECT_SLUG"
 $history = Invoke-RestMethod -Uri "$apiURL/history?recordsNumber=2" -Headers $headers -Method Get
 
+$gitDescribe = git describe --abbrev=0
+$version = $gitDescribe -replace "^v", ""
+
 $previousVersion = [Version]"0.0.0"
-$currentVersion = [Version]($( $( git describe --abbrev = 0 ) -replace "^v", "" ))
+$currentVersion = [Version]$version
 if ($history.builds.Count -eq 2)
 {
     $previous = $history.builds[1].version
