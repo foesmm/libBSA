@@ -1,5 +1,9 @@
 image: Visual Studio 2017
 
+environment:
+  API_TOKEN:
+    secure: i8cKR7udQcCbxn/1Cq9eoR9Pmc4z/w5GJI/mrjKDPsc=
+
 before_build:
   - nuget restore
   - ps: ci/UpdateBuildVersion.ps1
