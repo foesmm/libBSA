@@ -14,6 +14,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libBSA.Tests", "libBSA.Tests\libBSA.Tests.csproj", "{0EB0A46B-5163-4EEC-B09D-5D1DA669164D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ci", "ci", "{D3DB00FD-F536-4BE2-B1EB-E6100B104DEE}"
+ProjectSection(SolutionItems) = preProject
+	ci\UpdateBuildVersion.ps1 = ci\UpdateBuildVersion.ps1
+	ci\appveyor.yml = ci\appveyor.yml
+EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,5 +37,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D3DB00FD-F536-4BE2-B1EB-E6100B104DEE} = {4578E474-69BC-4C0F-880B-60555198C112}
 	EndGlobalSection
 EndGlobal
