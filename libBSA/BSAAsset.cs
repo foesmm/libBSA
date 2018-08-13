@@ -5,7 +5,7 @@ using System.Text;
 using System.Diagnostics;
 using System.Xml.Serialization;
 
-namespace org.foesmm.libBSA
+namespace foesmm.libBSA
 {
     [DebuggerDisplay("{GetType()} Name = {Name}, NameHash = {NameHash}")]
     public abstract class BSAAsset

@@ -7,7 +7,7 @@ using System.Xml;
 using System.Xml.Schema;
 using System.Xml.Serialization;
 
-namespace org.foesmm.libBSA
+namespace foesmm.libBSA
 {
     public class BSAAssets<TValue> : IDictionary<UInt64, TValue>, IXmlSerializable
         where TValue : BSAAsset

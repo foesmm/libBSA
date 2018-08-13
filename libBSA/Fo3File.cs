@@ -7,7 +7,7 @@ using System.Security.Cryptography;
 using Ionic.Zlib;
 using System.Xml.Serialization;
 
-namespace org.foesmm.libBSA
+namespace foesmm.libBSA
 {
     [Serializable]
     [XmlRoot("File")]

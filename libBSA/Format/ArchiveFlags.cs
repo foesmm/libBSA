@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace org.foesmm.libBSA.Format
+namespace foesmm.libBSA.Format
 {
     [Flags]
     public enum ArchiveFlags : UInt32

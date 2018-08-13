@@ -1,7 +1,7 @@
 ﻿using Xunit;
-using org.foesmm.libBSA;
+using foesmm.libBSA;
 
-namespace org.foesmm.libBSA.Tests
+namespace foesmm.libBSA.Tests
 {
     public class UnitTest1
     {

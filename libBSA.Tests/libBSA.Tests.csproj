@@ -1,5 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\xunit.runner.visualstudio.2.4.0\build\net20\xunit.runner.visualstudio.props" Condition="Exists('..\..\xunit.runner.visualstudio.2.4.0\build\net20\xunit.runner.visualstudio.props')" />
+  <Import Project="..\..\xunit.core.2.4.0\build\xunit.core.props" Condition="Exists('..\..\xunit.core.2.4.0\build\xunit.core.props')" />
   <Import Project="..\packages\xunit.runner.visualstudio.2.3.1\build\net20\xunit.runner.visualstudio.props" Condition="Exists('..\packages\xunit.runner.visualstudio.2.3.1\build\net20\xunit.runner.visualstudio.props')" />
   <Import Project="..\packages\xunit.core.2.3.1\build\xunit.core.props" Condition="Exists('..\packages\xunit.core.2.3.1\build\xunit.core.props')" />
   <PropertyGroup>
@@ -8,9 +10,9 @@
     <ProjectGuid>{0EB0A46B-5163-4EEC-B09D-5D1DA669164D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>org.foesmm.libBSA.Tests</RootNamespace>
-    <AssemblyName>libBSA.Tests</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <RootNamespace>foesmm.common.bsa.tests</RootNamespace>
+    <AssemblyName>foesmm.libBSA.tests</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">15.0</VisualStudioVersion>
@@ -29,6 +31,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -37,6 +40,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="UnitTest1.cs" />
@@ -52,27 +56,36 @@
     <Folder Include="Samples\" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="xunit.abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c">
-      <HintPath>..\packages\xunit.abstractions.2.0.1\lib\net35\xunit.abstractions.dll</HintPath>
+    <Reference Include="System" />
+    <Reference Include="xunit.abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>..\..\xunit.abstractions.2.0.2\lib\net35\xunit.abstractions.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="xunit.assert, Version=2.3.1.3858, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c">
-      <HintPath>..\packages\xunit.assert.2.3.1\lib\netstandard1.1\xunit.assert.dll</HintPath>
+    <Reference Include="xunit.assert, Version=2.4.0.4049, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>..\..\xunit.assert.2.4.0\lib\netstandard2.0\xunit.assert.dll</HintPath>
     </Reference>
-    <Reference Include="xunit.core, Version=2.3.1.3858, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c">
-      <HintPath>..\packages\xunit.extensibility.core.2.3.1\lib\netstandard1.1\xunit.core.dll</HintPath>
+    <Reference Include="xunit.core, Version=2.4.0.4049, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>..\..\xunit.extensibility.core.2.4.0\lib\net452\xunit.core.dll</HintPath>
     </Reference>
-    <Reference Include="xunit.execution.desktop, Version=2.3.1.3858, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c">
-      <HintPath>..\packages\xunit.extensibility.execution.2.3.1\lib\net452\xunit.execution.desktop.dll</HintPath>
+    <Reference Include="xunit.execution.desktop, Version=2.4.0.4049, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>..\..\xunit.extensibility.execution.2.4.0\lib\net452\xunit.execution.desktop.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\xunit.analyzers.0.10.0\analyzers\dotnet\cs\xunit.analyzers.dll" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\xunit.core.2.3.1\build\xunit.core.targets" Condition="Exists('..\packages\xunit.core.2.3.1\build\xunit.core.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
+    <Error Condition="!Exists('..\..\xunit.core.2.4.0\build\xunit.core.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\xunit.core.2.4.0\build\xunit.core.props'))" />
+    <Error Condition="!Exists('..\..\xunit.core.2.4.0\build\xunit.core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\xunit.core.2.4.0\build\xunit.core.targets'))" />
+    <Error Condition="!Exists('..\..\xunit.runner.visualstudio.2.4.0\build\net20\xunit.runner.visualstudio.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\xunit.runner.visualstudio.2.4.0\build\net20\xunit.runner.visualstudio.props'))" />
   </Target>
-  <Import Project="..\packages\xunit.core.2.3.1\build\xunit.core.targets" Condition="Exists('..\packages\xunit.core.2.3.1\build\xunit.core.targets')" />
+  <Import Project="..\..\xunit.core.2.4.0\build\xunit.core.targets" Condition="Exists('..\..\xunit.core.2.4.0\build\xunit.core.targets')" />
 </Project>

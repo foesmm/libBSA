@@ -7,9 +7,9 @@
     <ProjectGuid>{F5CF3830-F5FB-43B9-8DCE-D970757C7EBD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>org.foesmm.libBSA</RootNamespace>
-    <AssemblyName>libBSA</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <RootNamespace>foesmm.common.bsa</RootNamespace>
+    <AssemblyName>foesmm.libBSA</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>

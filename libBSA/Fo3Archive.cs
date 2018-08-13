@@ -7,9 +7,9 @@ using System.Diagnostics;
 using System.Security.Cryptography;
 using System.Xml;
 using System.Xml.Serialization;
-using org.foesmm.libBSA.Format;
+using foesmm.libBSA.Format;
 
-namespace org.foesmm.libBSA
+namespace foesmm.libBSA
 {
     public class Fo3Archive : BSA, IBSA
     {

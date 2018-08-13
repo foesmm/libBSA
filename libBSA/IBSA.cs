@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.IO;
 
-namespace org.foesmm.libBSA
+namespace foesmm.libBSA
 {
     // @ToDo: implement IDictionary<string, Fo3File>, IEnumerable<Fo3File>
     public interface IBSA : IDisposable

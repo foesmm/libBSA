@@ -1,10 +1,10 @@
-﻿using org.foesmm.libBSA.Format;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using foesmm.libBSA.Format;
 
-namespace org.foesmm.libBSA
+namespace foesmm.libBSA
 {
     class UnsupportedArchiveException : Exception
     {

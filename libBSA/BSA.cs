@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using System.Xml.Serialization;
-using org.foesmm.libBSA.Format;
 using System.Xml;
 using System.Runtime.Serialization;
+using foesmm.libBSA.Format;
 
-namespace org.foesmm.libBSA
+namespace foesmm.libBSA
 {
     [Serializable]
     [XmlInclude(typeof(Fo3Archive))]
